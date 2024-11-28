@@ -152,6 +152,63 @@ This command deletes all resources created by the `azd up` command, ensuring no 
 
 ---
 
+## **Running the Spring Boot Sample**
+
+To run the Spring Boot sample demonstrating the strangler fig pattern, follow these steps:
+
+### **Prerequisites**
+
+1. Ensure the following tools are installed:
+   - **Java 11 or later**
+   - **Maven**
+
+### **Steps to Run**
+
+#### 1. Clone the Repository
+
+Start by cloning the repository:
+
+```bash
+git clone https://github.com/roryp/stranglerfig.git
+cd stranglerfig
+```
+
+#### 2. Build the Project
+
+Run the following command to build the project:
+
+```bash
+mvn clean install
+```
+
+#### 3. Run the Application
+
+Run the following command to start the Spring Boot application:
+
+```bash
+mvn spring-boot:run
+```
+
+The application will start on port 8080 by default.
+
+#### 4. Test the Application
+
+You can test the application by sending requests to the `/api/customer` endpoint. For example:
+
+```bash
+curl http://localhost:8080/api/customer?id=MODERN_123
+```
+
+This request will be routed to the modern customer service. You can also test with a legacy customer ID:
+
+```bash
+curl http://localhost:8080/api/customer?id=LEGACY_456
+```
+
+This request will be routed to the legacy customer service.
+
+---
+
 ## **Conclusion**
 
 Modernizing Java applications with the **Strangler Pattern** and **MWA Pattern** enables organizations to achieve scalability, resilience, and maintainability incrementally. By combining these patterns with streamlined deployment using Azure Developer CLI (`azd`), developers can modernize applications efficiently while minimizing risks.  
