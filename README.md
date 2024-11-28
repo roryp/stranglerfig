@@ -70,8 +70,6 @@ This example uses a centralized router to direct requests based on specific crit
 
 ---
 
-
-
 ## **Running the Spring Boot Sample**
 
 To run the Spring Boot sample demonstrating the strangler fig pattern, follow these steps:
@@ -126,93 +124,6 @@ curl http://localhost:8080/api/customer?id=LEGACY_456
 ```
 
 This request will be routed to the legacy customer service.
-
----
-
-## **Deploying the Full Referernce architecture with Azure Developer CLI (azd)**
-
-The Azure Developer CLI (azd) simplifies the process of deploying the Modern Web App Pattern to Azure. Follow these steps to deploy the application using `azd`:
-
-### **Prerequisites**
-
-1. Install the **Azure Developer CLI**:  
-   [Install Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd)
-
-2. Ensure the following tools are installed:  
-   - **Java 17 or later**
-   - **Docker**
-
-3. An active Azure subscription.
-
----
-
-### **Steps to Deploy**
-
-#### 1. Clone the Repository
-
-Start by cloning the Modern Web App reference project:
-
-```bash
-git clone https://github.com/Azure/modern-web-app-pattern-java.git
-cd modern-web-app-pattern-java
-```
-
-#### 2. Initialize Azure Developer CLI Project
-
-Run the following command to initialize the `azd` environment:
-
-```bash
-azd init
-```
-
-You’ll be prompted to select a template. Choose the template for the Modern Web App if it is listed, or confirm the directory contains the correct application files.
-
-#### 3. Provision Azure Resources and Deploy
-
-Run the following command to provision the necessary Azure resources and deploy the application:
-
-```bash
-azd up
-```
-
-This command performs the following actions:
-- Provisions Azure resources, including **App Service**, **Azure Database for PostgreSQL**, and **Azure Key Vault**.
-- Deploys the application to the provisioned resources.
-- Configures environment variables and connections.
-
-During execution, you’ll be prompted to:
-- Authenticate to Azure using your account credentials.
-- Select an Azure subscription and region.
-
-#### 4. Retrieve the Application URL
-
-After deployment, the CLI will output the application’s endpoint. You can also retrieve it with:
-
-```bash
-azd show
-```
-
-The `azd show` command displays essential information, including the URL for your deployed app.
-
----
-
-### **Testing the Deployment**
-
-Visit the deployed application URL in your browser to verify that the deployment is successful. You should see the running Modern Web App.
-
----
-
-### **Tear Down Resources**
-
-If you need to clean up the deployed resources, use:
-
-```bash
-azd down
-```
-
-This command deletes all resources created by the `azd up` command, ensuring no unnecessary charges in your Azure account.
-
----
 
 ## **Conclusion**
 
