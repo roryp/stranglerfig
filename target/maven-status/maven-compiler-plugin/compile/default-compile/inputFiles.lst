@@ -1,0 +1,5 @@
+/workspaces/stranglerfig/src/main/java/com/example/stranglerfig/controller/CustomerRouterController.java
+/workspaces/stranglerfig/src/main/java/com/example/stranglerfig/StranglerFigApplication.java
+/workspaces/stranglerfig/src/main/java/com/example/stranglerfig/model/Customer.java
+/workspaces/stranglerfig/src/main/java/com/example/stranglerfig/service/LegacyCustomerService.java
+/workspaces/stranglerfig/src/main/java/com/example/stranglerfig/service/ModernCustomerService.java
