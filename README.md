@@ -218,4 +218,4 @@ This command deletes all resources created by the `azd up` command, ensuring no 
 
 Modernizing Java applications with the **Strangler Pattern** and **MWA Pattern** enables organizations to achieve scalability, resilience, and maintainability incrementally. By combining these patterns with streamlined deployment using Azure Developer CLI (`azd`), developers can modernize applications efficiently while minimizing risks.  
 
-For detailed guidance, visit the [Modern Web App Pattern for Java](https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/modern-web-apps-java) documentation.
+For detailed guidance, visit the [Modern Web App Pattern for Java](https://learn.microsoft.com/en-us/azure/architecture/web-apps/guides/enterprise-app-patterns/modern-web-app/java/guidance) documentation.
