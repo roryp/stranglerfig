@@ -70,7 +70,66 @@ This example uses a centralized router to direct requests based on specific crit
 
 ---
 
-## **Deploying the Modern Web App with Azure Developer CLI (azd)**
+
+
+## **Running the Spring Boot Sample**
+
+To run the Spring Boot sample demonstrating the strangler fig pattern, follow these steps:
+
+### **Prerequisites**
+
+1. Ensure the following tools are installed:
+   - **Java 11 or later**
+   - **Maven**
+
+### **Steps to Run**
+
+#### 1. Clone the Repository
+
+Start by cloning the repository:
+
+```bash
+git clone https://github.com/roryp/stranglerfig.git
+cd stranglerfig
+```
+
+#### 2. Build the Project
+
+Run the following command to build the project:
+
+```bash
+mvn clean install
+```
+
+#### 3. Run the Application
+
+Run the following command to start the Spring Boot application:
+
+```bash
+mvn spring-boot:run
+```
+
+The application will start on port 8080 by default.
+
+#### 4. Test the Application
+
+You can test the application by sending requests to the `/api/customer` endpoint. For example:
+
+```bash
+curl http://localhost:8080/api/customer?id=MODERN_123
+```
+
+This request will be routed to the modern customer service. You can also test with a legacy customer ID:
+
+```bash
+curl http://localhost:8080/api/customer?id=LEGACY_456
+```
+
+This request will be routed to the legacy customer service.
+
+---
+
+## **Deploying the Full Referernce architecture with Azure Developer CLI (azd)**
 
 The Azure Developer CLI (azd) simplifies the process of deploying the Modern Web App Pattern to Azure. Follow these steps to deploy the application using `azd`:
 
@@ -152,63 +211,6 @@ azd down
 ```
 
 This command deletes all resources created by the `azd up` command, ensuring no unnecessary charges in your Azure account.
-
----
-
-## **Running the Spring Boot Sample**
-
-To run the Spring Boot sample demonstrating the strangler fig pattern, follow these steps:
-
-### **Prerequisites**
-
-1. Ensure the following tools are installed:
-   - **Java 11 or later**
-   - **Maven**
-
-### **Steps to Run**
-
-#### 1. Clone the Repository
-
-Start by cloning the repository:
-
-```bash
-git clone https://github.com/roryp/stranglerfig.git
-cd stranglerfig
-```
-
-#### 2. Build the Project
-
-Run the following command to build the project:
-
-```bash
-mvn clean install
-```
-
-#### 3. Run the Application
-
-Run the following command to start the Spring Boot application:
-
-```bash
-mvn spring-boot:run
-```
-
-The application will start on port 8080 by default.
-
-#### 4. Test the Application
-
-You can test the application by sending requests to the `/api/customer` endpoint. For example:
-
-```bash
-curl http://localhost:8080/api/customer?id=MODERN_123
-```
-
-This request will be routed to the modern customer service. You can also test with a legacy customer ID:
-
-```bash
-curl http://localhost:8080/api/customer?id=LEGACY_456
-```
-
-This request will be routed to the legacy customer service.
 
 ---
 
