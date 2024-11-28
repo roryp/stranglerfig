@@ -77,12 +77,30 @@ To run the Spring Boot sample demonstrating the strangler fig pattern, follow th
 ### **Prerequisites**
 
 1. Ensure the following tools are installed:
-   - **Java 11 or later**
+   - **JDK 17**
    - **Maven**
+   - **Visual Studio Code**
+   - **Java Extension Pack for Visual Studio Code**
 
 ### **Steps to Run**
 
-#### 1. Clone the Repository
+#### 1. Install JDK 17
+
+Download and install JDK 17 from the [official website](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html). Follow the installation instructions for your operating system.
+
+#### 2. Install Apache Maven
+
+Download and install Apache Maven from the [official website](https://maven.apache.org/download.cgi). Follow the installation instructions for your operating system.
+
+#### 3. Install Visual Studio Code
+
+Download and install Visual Studio Code from the [official website](https://code.visualstudio.com/Download). Follow the installation instructions for your operating system.
+
+#### 4. Install Java Extension Pack for Visual Studio Code
+
+Install the Java Extension Pack for Visual Studio Code from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack). This extension pack includes essential Java tools such as Maven support and Java 17 compatibility.
+
+#### 5. Clone the Repository
 
 Start by cloning the repository:
 
@@ -91,7 +109,7 @@ git clone https://github.com/roryp/stranglerfig.git
 cd stranglerfig
 ```
 
-#### 2. Build the Project
+#### 6. Build the Project
 
 Run the following command to build the project:
 
@@ -99,7 +117,7 @@ Run the following command to build the project:
 mvn clean install
 ```
 
-#### 3. Run the Application
+#### 7. Run the Application
 
 Run the following command to start the Spring Boot application:
 
@@ -109,7 +127,7 @@ mvn spring-boot:run
 
 The application will start on port 8080 by default.
 
-#### 4. Test the Application
+#### 8. Test the Application
 
 You can test the application by sending requests to the `/api/customer` endpoint. For example:
 
