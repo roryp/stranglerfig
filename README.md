@@ -44,7 +44,6 @@ public class CustomerRouterController {
     private final LegacyCustomerService legacyService;
     private final ModernCustomerService modernService;
 
-    @Autowired
     public CustomerRouterController(LegacyCustomerService legacyService, ModernCustomerService modernService) {
         this.legacyService = legacyService;
         this.modernService = modernService;
