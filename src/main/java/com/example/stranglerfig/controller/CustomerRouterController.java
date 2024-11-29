@@ -3,7 +3,6 @@ package com.example.stranglerfig.controller;
 import com.example.stranglerfig.model.Customer;
 import com.example.stranglerfig.service.LegacyCustomerService;
 import com.example.stranglerfig.service.ModernCustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +16,6 @@ public class CustomerRouterController {
     private final LegacyCustomerService legacyService;
     private final ModernCustomerService modernService;
 
-    @Autowired
     public CustomerRouterController(LegacyCustomerService legacyService, ModernCustomerService modernService) {
         this.legacyService = legacyService;
         this.modernService = modernService;
