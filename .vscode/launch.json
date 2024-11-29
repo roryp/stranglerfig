@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-StranglerFigApplication<stranglerfig>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.stranglerfig.StranglerFigApplication",
+            "projectName": "stranglerfig",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
