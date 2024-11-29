@@ -26,9 +26,11 @@ public class CustomerRouterController {
     @GetMapping("/customer")
     public ResponseEntity<Customer> getCustomer(@RequestParam String id) {
         if (isModernCustomer(id)) {
-            return modernService.getCustomer(id);
+            Customer customer = modernService.getCustomerById(id);
+            return ResponseEntity.ok(customer);
         }
-        return legacyService.getCustomer(id);
+        Customer customer = legacyService.getCustomerById(id);
+        return ResponseEntity.ok(customer);
     }
 
     private boolean isModernCustomer(String id) {
