@@ -2,7 +2,6 @@
 
 ![Strangler pattern](Picture1.png)
 
-
 Modernizing Java applications is essential for organizations aiming to improve scalability, maintainability, and performance while embracing cloud-native architectures. The **Strangler Pattern**, combined with the **Modern Web App (MWA) Pattern**, provides a robust framework for incrementally transitioning from monolithic systems to modular, resilient applications. This approach ensures seamless migration, minimizes risks, and aligns legacy systems with modern development practices inspired by frameworks like the **Reliable Web App (RWA) Pattern**.
 
 ---
@@ -54,9 +53,11 @@ public class CustomerRouterController {
     @GetMapping("/customer")
     public ResponseEntity<Customer> getCustomer(@RequestParam String id) {
         if (isModernCustomer(id)) {
-            return modernService.getCustomer(id);
+            Customer customer = modernService.getCustomerById(id);
+            return ResponseEntity.ok(customer);
         }
-        return legacyService.getCustomer(id);
+        Customer customer = legacyService.getCustomerById(id);
+        return ResponseEntity.ok(customer);
     }
 
     private boolean isModernCustomer(String id) {
