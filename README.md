@@ -70,6 +70,30 @@ This example uses a centralized router to direct requests based on specific crit
 
 ---
 
+## **Comparison with the Reference App**
+
+The sample implementation in this repository is similar to the reference app provided in the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository. Both implementations use the strangler fig pattern for incremental modernization.
+
+The reference app demonstrates how to apply the strangler fig pattern for Modern Web Applications (MWA). This pattern involves gradually replacing parts of a legacy system with new functionality, allowing for incremental modernization without disrupting the entire system. The sample implementation in this repository follows a similar approach, showcasing how to route requests between legacy and modern services based on specific criteria.
+
+For more details on the reference app and its use of the strangler fig pattern for MWA, visit the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository.
+
+### **Details on the Reference App Implementation**
+
+The reference app provided in the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository implements the strangler fig pattern in a detailed and comprehensive manner. Here are some key aspects of how the reference app implements the strangler fig pattern:
+
+- **Gradual Replacement**: The reference app gradually replaces parts of the legacy system with new functionality. This allows for incremental modernization without disrupting the entire system.
+- **Routing Logic**: The reference app uses routing logic to direct requests to either the legacy or modern implementation based on specific criteria. This ensures that both systems can coexist during the transition period.
+- **Incremental Modernization**: The reference app demonstrates how to incrementally modernize a legacy system by replacing individual components with modern implementations. This approach minimizes risks and ensures a smooth transition.
+- **Cloud-Native Integration**: The reference app leverages cloud-native services and tools, such as Azure Kubernetes Service (AKS) and Azure App Service, to build scalable and resilient applications. This integration ensures that the modernized system is aligned with best practices for cloud-native development.
+- **Message Queues**: The reference app uses message queues to handle asynchronous communication between services, ensuring reliable and decoupled interactions.
+- **Container Apps**: The reference app utilizes container apps to package and deploy services consistently across different environments, enhancing scalability and maintainability.
+- **Detailed Documentation**: The reference app provides detailed documentation and step-by-step instructions for implementing the strangler fig pattern. This includes guidance on setting up the development environment, deploying the application, and managing the transition from legacy to modern systems.
+
+For a comprehensive understanding of how the reference app implements the strangler fig pattern, refer to the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository and its accompanying documentation.
+
+---
+
 ## **Running the Spring Boot Sample**
 
 To run the Spring Boot sample demonstrating the strangler fig pattern, follow these steps:
