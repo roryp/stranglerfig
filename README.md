@@ -70,6 +70,51 @@ This example uses a centralized router to direct requests based on specific crit
 
 ---
 
+## **Martin Fowler's Original Strangler Pattern**
+
+Martin Fowler introduced the Strangler Pattern as a way to incrementally replace parts of a legacy system with new functionality. The pattern is inspired by the strangler fig tree, which gradually grows around and replaces its host tree. This approach allows for a smooth transition from the old system to the new one without a complete rewrite.
+
+### **Example: Martin Fowler's Strangler Pattern Code**
+
+```java
+public class StranglerApplication {
+    public static void main(String[] args) {
+        LegacySystem legacySystem = new LegacySystem();
+        ModernSystem modernSystem = new ModernSystem();
+
+        String request = "someRequest";
+        if (isModernRequest(request)) {
+            modernSystem.handleRequest(request);
+        } else {
+            legacySystem.handleRequest(request);
+        }
+    }
+
+    private static boolean isModernRequest(String request) {
+        // Logic to determine if the request should be handled by the modern system
+        return request.contains("modern");
+    }
+}
+
+class LegacySystem {
+    void handleRequest(String request) {
+        System.out.println("Handling request in legacy system: " + request);
+    }
+}
+
+class ModernSystem {
+    void handleRequest(String request) {
+        System.out.println("Handling request in modern system: " + request);
+    }
+}
+```
+
+Martin Fowler introduced the Strangler Pattern in his article "Strangler Fig Application" published on his website. You can read the original article [here](https://martinfowler.com/bliki/StranglerFigApplication.html).
+
+This example demonstrates how requests can be routed between the legacy and modern systems based on specific criteria, allowing for incremental modernization.
+
+---
+
 ## **Comparison with the Reference App**
 
 The sample implementation in this repository is similar to the reference app provided in the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository. Both implementations use the strangler fig pattern for incremental modernization.
