@@ -1,10 +1,10 @@
 # Modernizing Java Applications for Scalability, Maintainability, and Performance
 
-## Care: The Importance of Modernizing Java Applications
+## The Importance of Modernizing Java Applications
 
 In today's fast-paced technological landscape, modernizing Java applications is crucial for achieving scalability, maintainability, and performance. Legacy systems often struggle to keep up with the demands of modern users and business requirements. By adopting modern architectural patterns, organizations can ensure their applications remain competitive and capable of handling increased workloads.
 
-## Believe: The Benefits of the Strangler Pattern and Modern Web App Pattern
+## The Benefits of the Strangler Pattern and Modern Web App Pattern
 
 ### The Strangler Pattern: Incremental Evolution
 
@@ -27,7 +27,7 @@ The **Modern Web App (MWA) Pattern** is like a blueprint for creating cloud-nati
 
 This pattern helps you adopt best practices for building modern, efficient applications tailored for the cloud.
 
-## Know: Implementing the Strangler Pattern and Modern Web App Pattern
+## Implementing the Strangler Pattern and Modern Web App Pattern
 
 ### Combining Strangler and MWA Patterns
 
@@ -254,6 +254,6 @@ curl http://localhost:8080/api/customer?id=LEGACY_456
 
 This request will be routed to the legacy customer service.
 
-## CTA: Visit the Modern Web App Pattern for Java Documentation
+## Visit the Modern Web App Pattern for Java Documentation
 
 For detailed guidance on modernizing Java applications using the Strangler Pattern and Modern Web App Pattern, visit the [Modern Web App Pattern for Java](https://learn.microsoft.com/en-us/azure/architecture/web-apps/guides/enterprise-app-patterns/modern-web-app/java/guidance) documentation.
