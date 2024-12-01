@@ -300,9 +300,9 @@ The `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` environment variable changes the beh
 * `email` refers to the old functionaly where the the monolithic CAMS application sent out emails directly.
 * `queue` is the new functionality where messages are sent to to the new email service through Azure Service Bus.
 
-![request-service-email-setting](docs/assets/request-service-email-setting.png)
+![request-service-email-setting](docs/request-service-email-setting.png)
 
-![request-service-queue-setting](docs/assets/request-service-queue-setting.png)
+![request-service-queue-setting](docs/request-service-queue-setting.png)
 
 5. **Decommission the old service**: Once the new service is fully operational and all email functionality has been migrated, the old service can be decommissioned.
 
