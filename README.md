@@ -138,6 +138,57 @@ For a comprehensive understanding of how the reference app implements the strang
 
 ---
 
+## **Using Azure App Configuration for Feature Flags**
+
+The Modern Web App pattern reference sample uses Azure App Configuration to manage application settings and feature flags. Azure App Configuration is a managed service that provides a central place to manage application settings and feature flags. This is particularly useful in the context of the strangler fig pattern, as it allows for feature toggling and gradual rollout of new features.
+
+### **Benefits of Azure App Configuration**
+
+- **Centralized Management**: Manage all your application settings and feature flags in one place.
+- **Dynamic Configuration**: Update configuration settings and feature flags without redeploying your application.
+- **Feature Toggles**: Gradually roll out new features to users, reducing risk and ensuring a smooth transition.
+- **Integration with Azure Services**: Seamlessly integrate with other Azure services like Azure Functions, Azure App Service, and more.
+
+### **Example: Using Azure App Configuration**
+
+Here's an example of how you can use Azure App Configuration to manage feature flags in a Spring Boot application:
+
+1. **Add Dependency**: Add the Azure App Configuration dependency to your `pom.xml` file.
+
+```xml
+<dependency>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>azure-spring-cloud-feature-management</artifactId>
+    <version>2.3.0</version>
+</dependency>
+```
+
+2. **Configure App Configuration**: Add the following configuration to your `application.properties` file.
+
+```properties
+spring.cloud.azure.appconfiguration.stores[0].endpoint=https://<your-app-configuration-name>.azconfig.io
+spring.cloud.azure.appconfiguration.stores[0].connection-string=<your-connection-string>
+```
+
+3. **Use Feature Flags**: Use the `@FeatureGate` annotation to enable or disable features based on feature flags.
+
+```java
+@RestController
+@RequestMapping("/api")
+public class FeatureFlagController {
+
+    @GetMapping("/feature")
+    @FeatureGate(feature = "NewFeature")
+    public ResponseEntity<String> getFeature() {
+        return ResponseEntity.ok("New Feature is enabled!");
+    }
+}
+```
+
+This example demonstrates how to use Azure App Configuration to manage feature flags and enable or disable features dynamically.
+
+---
+
 ## **Running the Spring Boot Sample**
 
 To run the Spring Boot sample demonstrating the strangler fig pattern, follow these steps:
