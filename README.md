@@ -14,7 +14,7 @@ Martin Fowler introduced the Strangler Pattern as a way to incrementally replace
 public class StranglerApplication {
     public static void main(String[] args) {
         LegacySystem legacySystem = new LegacySystem();
-        ModernSystem modernSystem = new ModernSystem();
+        ModernSystem modernSystem();
 
         String request = "someRequest";
         if (isModernRequest(request)) {
@@ -254,6 +254,60 @@ curl http://localhost:8080/api/customer?id=LEGACY_456
 
 This request will be routed to the legacy customer service.
 
-## Visit the Modern Web App Pattern for Java Documentation
+### Integration Tests
 
-For detailed guidance on modernizing Java applications using the Strangler Pattern and Modern Web App Pattern, visit the [Modern Web App Pattern for Java](https://learn.microsoft.com/en-us/azure/architecture/web-apps/guides/enterprise-app-patterns/modern-web-app/java/guidance) documentation.
+Integration tests have been added to verify the retrieval of sample customers from both legacy and modern services. These tests ensure that the application correctly routes requests and retrieves customer data from the appropriate service.
+
+#### Example: Integration Test for Modern Customer
+
+```java
+@Test
+public void testGetCustomer_ModernCustomer() {
+    String modernCustomerId = "MODERN_1";
+    Customer modernCustomer = new Customer(modernCustomerId, "Modern Customer 1");
+
+    when(modernService.getCustomerById(modernCustomerId)).thenReturn(modernCustomer);
+
+    ResponseEntity<Customer> response = customerRouterController.getCustomer(modernCustomerId);
+
+    assertEquals(ResponseEntity.ok(modernCustomer), response);
+}
+```
+
+#### Example: Integration Test for Legacy Customer
+
+```java
+@Test
+public void testGetCustomer_LegacyCustomer() {
+    String legacyCustomerId = "LEGACY_1";
+    Customer legacyCustomer = new Customer(legacyCustomerId, "Legacy Customer 1");
+
+    when(legacyService.getCustomerById(legacyCustomerId)).thenReturn(legacyCustomer);
+
+    ResponseEntity<Customer> response = customerRouterController.getCustomer(legacyCustomerId);
+
+    assertEquals(ResponseEntity.ok(legacyCustomer), response);
+}
+```
+
+These integration tests validate the functionality of the `CustomerRouterController` and ensure that the application behaves as expected when retrieving customer data from both legacy and modern services.
+
+### Running Integration Tests
+
+To run the integration tests, follow these steps:
+
+1. **Build the Project**: Ensure the project is built by running the following command:
+
+```bash
+mvn clean install
+```
+
+2. **Run the Tests**: Execute the integration tests using the following command:
+
+```bash
+mvn test
+```
+
+This command will run all the tests, including the integration tests, and display the results in the console.
+
+By following these steps, you can verify that the integration tests pass successfully and that the application correctly retrieves customer data from both legacy and modern services.
