@@ -12,8 +12,6 @@ import org.springframework.http.ResponseEntity;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-
-
 public class CustomerRouterControllerTest {
 
     @Mock
@@ -32,9 +30,8 @@ public class CustomerRouterControllerTest {
 
     @Test
     public void testGetCustomer_ModernCustomer() {
-        String modernCustomerId = "MODERN_123";
-        Customer modernCustomer = new Customer();
-        modernCustomer.setId(modernCustomerId);
+        String modernCustomerId = "MODERN_1";
+        Customer modernCustomer = new Customer(modernCustomerId, "Modern Customer 1");
 
         when(modernService.getCustomerById(modernCustomerId)).thenReturn(modernCustomer);
 
@@ -45,9 +42,8 @@ public class CustomerRouterControllerTest {
 
     @Test
     public void testGetCustomer_LegacyCustomer() {
-        String legacyCustomerId = "LEGACY_123";
-        Customer legacyCustomer = new Customer();
-        legacyCustomer.setId(legacyCustomerId);
+        String legacyCustomerId = "LEGACY_1";
+        Customer legacyCustomer = new Customer(legacyCustomerId, "Legacy Customer 1");
 
         when(legacyService.getCustomerById(legacyCustomerId)).thenReturn(legacyCustomer);
 
