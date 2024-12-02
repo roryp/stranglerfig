@@ -243,19 +243,19 @@ The application will start on port 8080 by default.
 You can test the application by sending requests to the `/api/customer` endpoint. For example:
 
 ```bash
-curl http://localhost:8080/api/customer?id=MODERN_123
+curl http://localhost:8080/api/customer?id=MODERN_1
 ```
 
 This request will be routed to the modern customer service. You can also test with a legacy customer ID:
 
 ```bash
-curl http://localhost:8080/api/customer?id=LEGACY_456
+curl http://localhost:8080/api/customer?id=LEGACY_1
 ```
 
 This request will be routed to the legacy customer service. Additionally, you can test with another legacy customer ID:
 
 ```bash
-curl http://localhost:8080/api/customer?id=LEGACY_1
+curl http://localhost:8080/api/customer?id=LEGACY_2
 ```
 
 This request will also be routed to the legacy customer service.
