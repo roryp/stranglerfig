@@ -153,7 +153,7 @@ Here's an example of how you can use Azure App Configuration to manage feature f
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-spring-cloud-feature-management</artifactId>
-    <version>2.3.0</version>
+    <version>xxxxxx</version>
 </dependency>
 ```
 
