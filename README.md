@@ -8,15 +8,41 @@ In today's fast-paced technological landscape, modernizing Java applications is 
 
 ## The Strangler Pattern: A Strategy for Incremental Modernization
 
-Originally introduced by Martin Fowler, the **Strangler Pattern** offers a method to incrementally replace parts of a legacy system with new functionality. Inspired by the strangler fig tree that gradually overtakes its host, this approach allows for a smooth transition from the old system to the new one without the need for a complete rewrite.
+As applications age, the tools, technologies, and architectures they rely on can become outdated. Introducing new features can increase complexity, making these systems harder to maintain and evolve. Completely rewriting a complex system is often a massive and risky undertaking. The **Strangler Fig Pattern** offers a solution by allowing you to incrementally migrate a legacy system. This is achieved by gradually replacing specific pieces of functionality with new applications and services.
+
+Inspired by the strangler fig tree that grows around and eventually replaces its host, this pattern involves creating a façade that intercepts requests to the backend legacy system. The façade routes these requests either to the legacy application or the new services. This approach enables existing features to be migrated gradually, while consumers continue using the same interface, unaware of the changes happening behind the scenes.
 
 **Key Benefits of the Strangler Pattern:**
 
-- **Minimized Risks**: Incremental changes reduce the likelihood of system-wide disruptions.
-- **No Downtime**: Updates occur without halting the system, ensuring continued availability.
-- **Parallel Operations**: Legacy and modern systems coexist during migration, providing flexibility for gradual transitions.
+- **Minimized Risks:** Incremental changes reduce the likelihood of system-wide disruptions.
+- **No Downtime:** Updates occur without halting the system, ensuring continued availability.
+- **Parallel Operations:** Legacy and modern systems coexist during migration, providing flexibility for gradual transitions.
+- **Client Transparency:** Clients don't need to know where specific features are located, as the façade handles request routing.
 
-By selectively isolating and routing traffic to new components, the Strangler Pattern enables phased modernization while maintaining system stability.
+By gradually replacing the legacy system's features, the new system eventually encompasses all functionalities, allowing you to safely decommission the old system.
+
+**Issues and Considerations:**
+
+- **Shared Resources:** Ensure both new and legacy systems can access shared services and data stores during the transition.
+- **Façade Design:** Structure the façade to avoid becoming a single point of failure or a performance bottleneck.
+- **Future Migrations:** Design new applications and services so they can be easily intercepted and replaced in future migrations.
+- **Migration Pace:** Keep the façade updated with the migration progress to maintain seamless operation.
+
+**When to Use This Pattern:**
+
+- **Gradual Migration Needs:** When you need to migrate a backend application to a new architecture incrementally.
+- **Risk Mitigation:** When a complete system overhaul is too risky or impractical.
+
+**When This Pattern May Not Be Suitable:**
+
+- **Non-Interceptable Requests:** If requests to the backend system cannot be intercepted.
+- **Simpler Systems:** For smaller applications where a complete replacement is manageable and less complex.
+
+**Alignment with Azure Well-Architected Framework:**
+
+- **Reliability:** The incremental approach mitigates risks during transitions, enhancing system resilience.
+- **Cost Optimization:** Maximizes the use of existing investments while modernizing incrementally, allowing high-ROI replacements first.
+- **Operational Excellence:** Supports continuous improvement with small, manageable changes over time, reducing deployment risks.
 
 *Read Martin Fowler's original article on the Strangler Fig Application [here](https://martinfowler.com/bliki/StranglerFigApplication.html).*
 
@@ -26,10 +52,10 @@ Combining the Strangler Pattern with the **Modern Web App (MWA) Pattern** provid
 
 **Core Tenets of the MWA Pattern:**
 
-- **Microservices**: Breaking monoliths into independently deployable components.
-- **Containerization**: Ensuring consistency across diverse environments using containers.
-- **Cloud-Native Services**: Leveraging platforms like **Azure Kubernetes Service (AKS)** and **Azure App Service**.
-- **Automated Pipelines**: Implementing Continuous Integration and Continuous Deployment (CI/CD) for rapid delivery.
+- **Microservices:** Breaking monoliths into independently deployable components.
+- **Containerization:** Ensuring consistency across diverse environments using containers.
+- **Cloud-Native Services:** Leveraging platforms like **Azure Kubernetes Service (AKS)** and **Azure App Service**.
+- **Automated Pipelines:** Implementing Continuous Integration and Continuous Deployment (CI/CD) for rapid delivery.
 
 ### Example: Routing with the Strangler Pattern
 
@@ -74,11 +100,11 @@ The sample implementation in this repository mirrors the approach provided in th
 
 **Key Aspects of the Reference App Implementation:**
 
-- **Gradual Replacement**: Replacing parts of the legacy system incrementally with new functionality.
-- **Routing Logic**: Directing requests to the appropriate service (legacy or modern) based on specific criteria.
-- **Asynchronous Communication**: Using message queues for reliable, decoupled interactions between services.
-- **Containerization**: Deploying services consistently across environments using container apps.
-- **Comprehensive Documentation**: Providing step-by-step instructions for setting up, deploying, and managing the application transition.
+- **Gradual Replacement:** Replacing parts of the legacy system incrementally with new functionality.
+- **Routing Logic:** Directing requests to the appropriate service (legacy or modern) based on specific criteria.
+- **Asynchronous Communication:** Using message queues for reliable, decoupled interactions between services.
+- **Containerization:** Deploying services consistently across environments using container apps.
+- **Comprehensive Documentation:** Providing step-by-step instructions for setting up, deploying, and managing the application transition.
 
 For detailed guidance, visit the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository.
 
@@ -136,7 +162,6 @@ Ensure you have the following tools installed:
 
      ```bash
      curl http://localhost:8080/api/customer?id=LEGACY_1
-     curl http://localhost:8080/api/customer?id=LEGACY_2
      ```
 
      These requests are routed to the legacy customer service.
@@ -151,9 +176,9 @@ Integration tests are included to verify the retrieval of sample customers from 
 
 [FF4j (Feature Flipping for Java)](https://ff4j.org/) is a library that enables dynamic activation and deactivation of features in Java applications. It allows developers to manage features without redeploying code, facilitating:
 
-- **Dynamic Feature Management**: Toggle features at runtime.
-- **A/B Testing**: Gradually roll out features to subsets of users.
-- **Monitoring and Auditing**: Track feature usage and performance.
+- **Dynamic Feature Management:** Toggle features at runtime.
+- **A/B Testing:** Gradually roll out features to subsets of users.
+- **Monitoring and Auditing:** Track feature usage and performance.
 
 FF4j can be integrated into Spring Boot applications, providing a web console and APIs for feature management.
 
@@ -163,10 +188,10 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 
 **Benefits of Azure App Configuration:**
 
-- **Centralized Management**: Simplify configuration across multiple applications and environments.
-- **Real-Time Updates**: Modify settings and feature flags without application restarts.
-- **Feature Flags**: Control feature exposure to users, enabling staged rollouts.
-- **Seamless Integration**: Works well with Azure services and supports various programming languages.
+- **Centralized Management:** Simplify configuration across multiple applications and environments.
+- **Real-Time Updates:** Modify settings and feature flags without application restarts.
+- **Feature Flags:** Control feature exposure to users, enabling staged rollouts.
+- **Seamless Integration:** Works well with Azure services and supports various programming languages.
 
 #### Example: Using Azure App Configuration in a Spring Boot Application
 
