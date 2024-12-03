@@ -169,6 +169,10 @@ Ensure you have the following tools installed:
 
 Integration tests are included to verify the retrieval of sample customers from both legacy and modern services. These tests ensure correct routing and data retrieval based on customer IDs.
 
+## Conclusion
+
+Modernizing Java applications using the Strangler Pattern and Modern Web App Pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability.
+
 ## Appendix
 
 ### FF4j: Feature Flipping for Java
@@ -227,10 +231,6 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
    ```
 
    With this setup, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
-
-## Conclusion
-
-Modernizing Java applications using the Strangler Pattern and Modern Web App Pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability.
 
 ## Useful Links
 
