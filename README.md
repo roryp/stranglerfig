@@ -108,7 +108,6 @@ The sample implementation in this repository mirrors the approach provided in th
 
 For detailed guidance, visit the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository.
 
-*For more on the Strangler Pattern, see the [Strangler Fig Pattern documentation](docs/StranglerFig.md).*
 
 ## Running the Spring Boot Sample
 
