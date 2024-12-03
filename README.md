@@ -5,51 +5,9 @@
 In today's fast-paced technological landscape, modernizing Java applications is crucial for achieving scalability, maintainability, and performance. Legacy systems often struggle to keep up with the demands of modern users and business requirements. By adopting modern architectural patterns, organizations can ensure their applications remain competitive and capable of handling increased workloads.
 
 ### Martin Fowler's Original Strangler Pattern
-
+ 
 Martin Fowler introduced the Strangler Pattern as a way to incrementally replace parts of a legacy system with new functionality. The pattern is inspired by the strangler fig tree, which gradually grows around and replaces its host tree. This approach allows for a smooth transition from the old system to the new one without a complete rewrite.
-
-#### Example: Martin Fowler's Strangler Pattern Code
-
-```java
-public class StranglerApplication {
-    public static void main(String[] args) {
-        LegacySystem legacySystem = new LegacySystem();
-        ModernSystem modernSystem();
-
-        String request = "someRequest";
-        if (isModernRequest(request)) {
-            modernSystem.handleRequest(request);
-        } else {
-            legacySystem.handleRequest(request);
-        }
-    }
-
-    private static boolean isModernRequest(String request) {
-        // Logic to determine if the request should be handled by the modern system
-        return request.contains("modern");
-    }
-}
-
-class LegacySystem {
-    void handleRequest(String request) {
-        System.out.println("Handling request in legacy system: " + request);
-    }
-}
-
-class ModernSystem {
-    void handleRequest(String request) {
-        System.out.println("Handling request in modern system: " + request);
-    }
-}
-```
-
-Martin Fowler introduced the Strangler Pattern in his article "Strangler Fig Application" published on his website. You can read the original article [here](https://martinfowler.com/bliki/StranglerFigApplication.html).
-
-This example demonstrates how requests can be routed between the legacy and modern systems based on specific criteria, allowing for incremental modernization.
-
-## The Benefits of the Strangler Pattern and Modern Web App Pattern
-
-### The Strangler Pattern: Incremental Evolution
+You can read the original article [here](https://martinfowler.com/bliki/StranglerFigApplication.html).
 
 The **Strangler Pattern** is inspired by the strangler fig tree, which gradually takes over its host. Instead of a complete overhaul, you replace components of your legacy system incrementally. Here are some key benefits:
 
@@ -59,18 +17,7 @@ The **Strangler Pattern** is inspired by the strangler fig tree, which gradually
 
 By isolating and routing traffic to new components selectively, the Strangler Pattern enables phased modernization.
 
-### The Modern Web App Pattern: Foundation for Resilience
-
-The **Modern Web App (MWA) Pattern** is like a blueprint for creating cloud-native, scalable applications. It emphasizes resilience, security, and scalability. Here are its core tenets:
-
-- **Microservices**: Breaking monoliths into independently deployable components.
-- **Containerization**: Ensuring consistency across diverse environments.
-- **Cloud-Native Services**: Leveraging tools like **Azure Kubernetes Service (AKS)** and **Azure App Service**.
-- **Automated Pipelines**: Enabling Continuous Integration and Continuous Deployment (CI/CD).
-
-This pattern helps you adopt best practices for building modern, efficient applications tailored for the cloud.
-
-## Implementing the Strangler Pattern and Modern Web App Pattern
+## Implementing the Strangler Pattern
 
 ### Combining Strangler and MWA Patterns
 
@@ -109,7 +56,16 @@ public class CustomerRouterController {
 
 This example uses a centralized router to direct requests based on specific criteria, such as the format of the customer ID. It enables both legacy and modernized systems to coexist during the transition.
 
-### Comparison with the Reference App
+### The Modern Web App Pattern: Foundation for Resilience
+
+The **Modern Web App (MWA) Pattern** is like a blueprint for creating cloud-native, scalable applications. It emphasizes resilience, security, and scalability. Here are its core tenets:
+
+- **Microservices**: Breaking monoliths into independently deployable components.
+- **Containerization**: Ensuring consistency across diverse environments.
+- **Cloud-Native Services**: Leveraging tools like **Azure Kubernetes Service (AKS)** and **Azure App Service**.
+- **Automated Pipelines**: Enabling Continuous Integration and Continuous Deployment (CI/CD).
+
+This pattern helps you adopt best practices for building modern, efficient applications tailored for the cloud.
 
 The sample implementation in this repository is similar to the reference app provided in the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository. Both implementations use the strangler fig pattern for incremental modernization.
 
@@ -131,61 +87,6 @@ The reference app provided in the [Modern Java Web App Patterns](https://github.
 For a comprehensive understanding of how the reference app implements the strangler fig pattern, refer to the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository and its accompanying documentation.
 
 For more details on the Strangler Fig Pattern, visit the [Strangler Fig Pattern](docs/SranglerFig.md) documentation.
-
-### Using Azure App Configuration for Feature Flags
-
-The Modern Web App pattern reference sample uses Azure App Configuration to manage application settings and feature flags. Azure App Configuration is a managed service that provides a central place to manage application settings and feature flags. This is particularly useful in the context of the strangler fig pattern, as it allows for feature toggling and gradual rollout of new features.
-
-#### Benefits of Azure App Configuration
-
-- **Centralized Management**: Manage all your application settings and feature flags in one place.
-- **Dynamic Configuration**: Update configuration settings and feature flags without redeploying your application.
-- **Feature Toggles**: Gradually roll out new features to users, reducing risk and ensuring a smooth transition.
-- **Integration with Azure Services**: Seamlessly integrate with other Azure services like Azure Functions, Azure App Service, and more.
-
-#### Example: Using Azure App Configuration
-
-Here's an example of how you can use Azure App Configuration to manage feature flags in a Spring Boot application:
-
-1. **Add Dependency**: Add the Azure App Configuration dependency to your `pom.xml` file.
-
-```xml
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure-spring-cloud-feature-management</artifactId>
-    <version>xxxxxx</version>
-</dependency>
-```
-
-2. **Configure App Configuration**: Add the following configuration to your `application.properties` file.
-
-```properties
-spring.cloud.azure.appconfiguration.stores[0].endpoint=https://<your-app-configuration-name>.azconfig.io
-spring.cloud.azure.appconfiguration.stores[0].connection-string=<your-connection-string>
-```
-
-3. **Use Feature Flags**: Use the `@FeatureGate` annotation to enable or disable features based on feature flags.
-
-```java
-@RestController
-@RequestMapping("/api")
-public class FeatureFlagController {
-
-    @GetMapping("/feature")
-    @FeatureGate(feature = "NewFeature")
-    public ResponseEntity<String> getFeature() {
-        return ResponseEntity.ok("New Feature is enabled!");
-    }
-}
-```
-
-This example demonstrates how to use Azure App Configuration to manage feature flags and enable or disable features dynamically.
-
-### FF4j: Feature Flipping for Java
-
-FF4j (Feature Flipping for Java) is a library that allows developers to enable or disable features in their applications dynamically. It provides a step-by-step guide to set up and run a demo of FF4j using Docker or Maven. It also explains how to build a project using FF4j, including creating a project skeleton, defining FF4j objects, exposing the web console, and defining a sample controller. The guide includes code snippets and instructions for integrating FF4j with a Spring Boot application. Additionally, it covers how to create and manage features and properties, and how to display them on a web page based on their status.
-
-For more information, visit the FF4j website at [https://ff4j.org/](https://ff4j.org/), which provides comprehensive documentation and resources for using FF4j in Java applications.
 
 ### Running the Spring Boot Sample
 
@@ -270,7 +171,7 @@ This request will also be routed to the legacy customer service.
 
 Integration tests have been added to verify the retrieval of sample customers from both legacy and modern services. These tests ensure that the application correctly routes requests and retrieves customer data from the appropriate service.
 
-## Links Mentioned
+## Links
 
 - [Martin Fowler's Strangler Fig Application](https://martinfowler.com/bliki/StranglerFigApplication.html)
 - [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java)
@@ -279,4 +180,61 @@ Integration tests have been added to verify the retrieval of sample customers fr
 - [Apache Maven](https://maven.apache.org/download.cgi)
 - [Visual Studio Code](https://code.visualstudio.com/Download)
 - [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-- [FF4j](https://ff4j.org/)
+
+## Appendix
+
+### FF4j: Feature Flipping for Java
+
+FF4j (Feature Flipping for Java) is a library that allows developers to enable or disable features in their applications dynamically. It provides a step-by-step guide to set up and run a demo of FF4j using Docker or Maven. It also explains how to build a project using FF4j, including creating a project skeleton, defining FF4j objects, exposing the web console, and defining a sample controller. The guide includes code snippets and instructions for integrating FF4j with a Spring Boot application. Additionally, it covers how to create and manage features and properties, and how to display them on a web page based on their status.
+
+For more information, visit the FF4j website at [https://ff4j.org/](https://ff4j.org/), which provides comprehensive documentation and resources for using FF4j in Java applications.
+
+### Azure App Configuration for Feature Flags
+
+The Modern Web App pattern reference sample uses Azure App Configuration to manage application settings and feature flags. Azure App Configuration is a managed service that provides a central place to manage application settings and feature flags. This is particularly useful in the context of the strangler fig pattern, as it allows for feature toggling and gradual rollout of new features.
+
+#### Benefits of Azure App Configuration
+
+- **Centralized Management**: Manage all your application settings and feature flags in one place.
+- **Dynamic Configuration**: Update configuration settings and feature flags without redeploying your application.
+- **Feature Toggles**: Gradually roll out new features to users, reducing risk and ensuring a smooth transition.
+- **Integration with Azure Services**: Seamlessly integrate with other Azure services like Azure Functions, Azure App Service, and more.
+
+#### Example: Using Azure App Configuration
+
+Here's an example of how you can use Azure App Configuration to manage feature flags in a Spring Boot application:
+
+1. **Add Dependency**: Add the Azure App Configuration dependency to your `pom.xml` file.
+
+```xml
+<dependency>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>azure-spring-cloud-feature-management</artifactId>
+    <version>xxxxxx</version>
+</dependency>
+```
+
+2. **Configure App Configuration**: Add the following configuration to your `application.properties` file.
+
+```properties
+spring.cloud.azure.appconfiguration.stores[0].endpoint=https://<your-app-configuration-name>.azconfig.io
+spring.cloud.azure.appconfiguration.stores[0].connection-string=<your-connection-string>
+```
+
+3. **Use Feature Flags**: Use the `@FeatureGate` annotation to enable or disable features based on feature flags.
+
+```java
+@RestController
+@RequestMapping("/api")
+public class FeatureFlagController {
+
+    @GetMapping("/feature")
+    @FeatureGate(feature = "NewFeature")
+    public ResponseEntity<String> getFeature() {
+        return ResponseEntity.ok("New Feature is enabled!");
+    }
+}
+```
+
+This example demonstrates how to use Azure App Configuration to manage feature flags and enable or disable features dynamically.
+
