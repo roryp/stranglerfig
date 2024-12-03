@@ -1,4 +1,4 @@
-# Modernizing Java Applications for Scalability, Maintainability, and Performance
+# Modern Web App Patterns: Strangler Fig
 
 ## Introduction
 
