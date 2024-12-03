@@ -1,3 +1,5 @@
+![Strangler Fig](Picture1.png)
+
 # Modern Web App Patterns: Strangler Fig
 
 ## Introduction
