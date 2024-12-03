@@ -228,11 +228,14 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 
    With this setup, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
 
+## Conclusion
+
+Modernizing Java applications using the Strangler Pattern and Modern Web App Pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability.
+
 ## Useful Links
 
 - [Martin Fowler's Strangler Fig Application](https://martinfowler.com/bliki/StranglerFigApplication.html)
 - [Modern Java Web App Patterns Repository](https://github.com/azure/modern-web-app-pattern-java)
-- [Strangler Fig Pattern Documentation](docs/StranglerFig.md)
 - [JDK 17 Downloads](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
 - [Apache Maven Downloads](https://maven.apache.org/download.cgi)
 - [Visual Studio Code Downloads](https://code.visualstudio.com/Download)
