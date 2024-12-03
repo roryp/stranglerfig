@@ -136,7 +136,6 @@ Ensure you have the following tools installed:
 
      ```bash
      curl http://localhost:8080/api/customer?id=LEGACY_1
-     curl http://localhost:8080/api/customer?id=LEGACY_2
      ```
 
      These requests are routed to the legacy customer service.
