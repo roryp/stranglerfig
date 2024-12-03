@@ -269,3 +269,14 @@ Integration tests have been added to verify the retrieval of sample customers fr
 FF4j (Feature Flipping for Java) is a library that allows developers to enable or disable features in their applications dynamically. It provides a step-by-step guide to set up and run a demo of FF4j using Docker or Maven. It also explains how to build a project using FF4j, including creating a project skeleton, defining FF4j objects, exposing the web console, and defining a sample controller. The guide includes code snippets and instructions for integrating FF4j with a Spring Boot application. Additionally, it covers how to create and manage features and properties, and how to display them on a web page based on their status.
 
 For more information, visit the FF4j website at [https://ff4j.org/](https://ff4j.org/), which provides comprehensive documentation and resources for using FF4j in Java applications.
+
+## Links Mentioned
+
+- [Martin Fowler's Strangler Fig Application](https://martinfowler.com/bliki/StranglerFigApplication.html)
+- [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java)
+- [Strangler Fig Pattern](docs/SranglerFig.md)
+- [JDK 17](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
+- [Apache Maven](https://maven.apache.org/download.cgi)
+- [Visual Studio Code](https://code.visualstudio.com/Download)
+- [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+- [FF4j](https://ff4j.org/)
