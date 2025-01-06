@@ -228,6 +228,29 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 
    With this setup, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
 
+## Configuration and Demo Steps
+
+### Configuration
+
+The following configurations can be changed in Azure App Configuration:
+
+- `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE`: This setting determines the service used for handling support guide requests. The default value is `queue`, which sends email requests to the Azure Service Bus to be processed by the `email-processor` container app. You can change this value to `demo-load` to simulate autoscaling.
+
+### Demo Steps
+
+To follow the full demo as described in `demo.md`, perform the following steps:
+
+1. **Deploy CAMS using `azd up`**: This will configure the application to use the new email service.
+2. **Open the CAMS application in a browser**.
+3. **Upload a support guide**: Click on the `Support Guides` link in the navigation bar and click `Upload New Guide`. The guides are located in the `contoso-guides` directory.
+4. **Navigate to Azure App Configuration**: Change the `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` value to `demo-load`.
+5. **Restart the Web App in App Service**.
+6. **Send an email**: Follow the steps in the Strangler Fig Pattern section.
+7. **Navigate to the Azure Service Bus in the Azure portal**: You will see a spike in incoming messages.
+8. **Navigate to the Container App in the Azure portal**: Click on the `Revisions and replicas` link under `Application` in the left navigation. Finally, click on the `Replicas` tab. You will see that the number of replicas has increased.
+
+By following these steps, you can simulate the functionality and autoscaling of the application.
+
 ## Conclusion
 
 Modernizing Java applications using the Strangler Pattern and Modern Web App Pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability.
