@@ -169,13 +169,9 @@ Ensure you have the following tools installed:
 
 Integration tests are included to verify the retrieval of sample customers from both legacy and modern services. These tests ensure correct routing and data retrieval based on customer IDs.
 
-## Conclusion
+### Feature Flags and Azure App Configuration
 
-Modernizing Java applications using the Strangler Pattern and Modern Web App Pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability.
-
-## Appendix
-
-### FF4j: Feature Flipping for Java
+#### FF4j: Feature Flipping for Java
 
 [FF4j (Feature Flipping for Java)](https://ff4j.org/) is a library that enables dynamic activation and deactivation of features in Java applications. It allows developers to manage features without redeploying code, facilitating:
 
@@ -185,7 +181,7 @@ Modernizing Java applications using the Strangler Pattern and Modern Web App Pat
 
 FF4j can be integrated into Spring Boot applications, providing a web console and APIs for feature management.
 
-### Azure App Configuration for Feature Flags
+#### Azure App Configuration for Feature Flags
 
 The Modern Web App pattern reference sample leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings and feature flags centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
 
@@ -196,7 +192,7 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 - **Feature Flags:** Control feature exposure to users, enabling staged rollouts.
 - **Seamless Integration:** Works well with Azure services and supports various programming languages.
 
-#### Example: Using Azure App Configuration in a Spring Boot Application
+##### Example: Using Azure App Configuration in a Spring Boot Application
 
 1. **Add the Dependency** to your `pom.xml`:
 
@@ -231,6 +227,10 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
    ```
 
    With this setup, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
+
+## Conclusion
+
+Modernizing Java applications using the Strangler Pattern and Modern Web App Pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability.
 
 ## Useful Links
 
