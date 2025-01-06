@@ -224,11 +224,11 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 
    With this setup, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
 
-## Demo
+## Reference App Demo 
 
-### Reference app Configuration
+### App Configuration
 
-After you deploy CAMS using `azd up`, the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
+After you deploy the official reference app (using `azd up`) the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
 
 ![edit-application-setting](./docs/edit-application-setting.png)
 
