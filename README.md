@@ -234,22 +234,15 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 
 The following reference app configurations can be changed in Azure App Configuration:
 
-- `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE`: This setting determines the service used for handling support guide requests. The default value is `queue`, which sends email requests to the Azure Service Bus to be processed by the `email-processor` container app. You can change this value to `demo-load` to simulate autoscaling.
+- `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE`: This setting determines the service used for handling support guide requests. The default value is `queue`, which sends email requests to the Azure Service Bus to be processed by the `email-processor` container app.
 
 ### Demo Steps
 
-To follow the full demo as described in `demo.md`, perform the following steps:
+After you deploy CAMS using `azd up`, the application is configured to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is set to `queue` for the App Service. Email requests go to the Azure Service Bus and are processed by the `email-processor` container app. This setting is defined in Azure App Configuration.
 
-1. **Deploy CAMS using `azd up`**: This will configure the application to use the new email service.
-2. **Open the CAMS application in a browser**.
-3. **Upload a support guide**: Click on the `Support Guides` link in the navigation bar and click `Upload New Guide`. The guides are located in the `contoso-guides` directory.
-4. **Navigate to Azure App Configuration**: Change the `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` value to `demo-load`.
-5. **Restart the Web App in App Service**.
-6. **Send an email**: Follow the steps in the Strangler Fig Pattern section.
-7. **Navigate to the Azure Service Bus in the Azure portal**: You will see a spike in incoming messages.
-8. **Navigate to the Container App in the Azure portal**: Click on the `Revisions and replicas` link under `Application` in the left navigation. Finally, click on the `Replicas` tab. You will see that the number of replicas has increased.
+![edit-application-setting](./docs/edit-application-setting.png)
 
-By following these steps, you can simulate the functionality and autoscaling of the application.
+To simulate the new messaging functionality, follow the rest of the steps in the reference application's [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md)
 
 ## Conclusion
 
