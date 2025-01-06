@@ -238,11 +238,11 @@ The following reference app configurations can be changed in Azure App Configura
 
 ### Demo Steps
 
-After you deploy CAMS using `azd up`, the application is configured to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is set to `queue` for the App Service. Email requests go to the Azure Service Bus and are processed by the `email-processor` container app. This setting is defined in Azure App Configuration.
+After you deploy CAMS using `azd up`, the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
 
 ![edit-application-setting](./docs/edit-application-setting.png)
 
-To simulate the new messaging functionality, follow the rest of the steps in the reference application's [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md)
+To try out the new messaging functionality, follow the steps in the reference application's [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md).
 
 ## Conclusion
 
