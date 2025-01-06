@@ -57,7 +57,7 @@ Combining the Strangler Pattern with the **Modern Web App (MWA) Pattern** provid
 - **Cloud-Native Services:** Leveraging platforms like **Azure Kubernetes Service (AKS)** and **Azure App Service**.
 - **Automated Pipelines:** Implementing Continuous Integration and Continuous Deployment (CI/CD) for rapid delivery.
 
-### Example: Routing with the Strangler Pattern
+### Example
 
 Imagine you're migrating a `/customer` endpoint from a legacy system to a modernized architecture. You can deploy a router that directs requests to either the old or new implementation based on specific conditions.
 
