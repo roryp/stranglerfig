@@ -228,11 +228,11 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 
    With this setup, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
 
-## Configuration and Demo Steps
+## Demo
 
-### Configuration
+### Reference app Configuration
 
-The following configurations can be changed in Azure App Configuration:
+The following reference app configurations can be changed in Azure App Configuration:
 
 - `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE`: This setting determines the service used for handling support guide requests. The default value is `queue`, which sends email requests to the Azure Service Bus to be processed by the `email-processor` container app. You can change this value to `demo-load` to simulate autoscaling.
 
