@@ -228,12 +228,6 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 
 ### Reference app Configuration
 
-The following reference app configurations can be changed in Azure App Configuration:
-
-- `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE`: This setting determines the service used for handling support guide requests. The default value is `queue`, which sends email requests to the Azure Service Bus to be processed by the `email-processor` container app.
-
-### Demo Steps
-
 After you deploy CAMS using `azd up`, the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
 
 ![edit-application-setting](./docs/edit-application-setting.png)
