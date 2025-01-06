@@ -167,17 +167,11 @@ Ensure you have the following tools installed:
 
 ### Feature Flags and Azure App Configuration
 
-#### FF4j: Feature Flipping for Java
-
-[FF4j (Feature Flipping for Java)](https://ff4j.org/) is a library that enables dynamic activation and deactivation of features in Java applications. It allows developers to manage features without redeploying code, facilitating:
+Feature Flipping enables dynamic activation and deactivation of features in Java applications. It allows developers to manage features without redeploying code, facilitating:
 
 - **Dynamic Feature Management:** Toggle features at runtime.
 - **A/B Testing:** Gradually roll out features to subsets of users.
 - **Monitoring and Auditing:** Track feature usage and performance.
-
-FF4j can be integrated into Spring Boot applications, providing a web console and APIs for feature management.
-
-#### Azure App Configuration for Feature Flags
 
 The Modern Web App pattern reference sample leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings and feature flags centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
 
@@ -188,7 +182,7 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 - **Feature Flags:** Control feature exposure to users, enabling staged rollouts.
 - **Seamless Integration:** Works well with Azure services and supports various programming languages.
 
-##### Example: Using Azure App Configuration in a Spring Boot Application
+#### Example: Using Azure App Configuration in a Spring Boot Application
 
 1. **Add the Dependency** to your `pom.xml`:
 
