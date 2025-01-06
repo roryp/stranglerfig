@@ -165,10 +165,6 @@ Ensure you have the following tools installed:
 
      These requests are routed to the legacy customer service.
 
-### Integration Tests
-
-Integration tests are included to verify the retrieval of sample customers from both legacy and modern services. These tests ensure correct routing and data retrieval based on customer IDs.
-
 ### Feature Flags and Azure App Configuration
 
 #### FF4j: Feature Flipping for Java
