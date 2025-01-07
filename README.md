@@ -111,7 +111,7 @@ Ensure you have the following tools installed:
 
 ## Modern Java Web App (MWA) Patterns
 
-Now that we have introduced the Stranger Fig pattern, we can combine it with others for form the **Modern Web App (MWA) Pattern** . The MWA pattern emphasizes resilience, security, and scalability, leveraging cloud native services and best practices. To manage application settings centrally, the MWA leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to simulate the the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
+Now that the Strangler Fig pattern has been introduced, it can be combined with other techniques to form the **Modern Web App (MWA) Pattern**. The MWA pattern emphasizes resilience, security, and scalability, leveraging cloud-native services and best practices. To centrally manage application settings, it uses [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/), which supports feature toggling and the gradual rollout of new features.
 
 Next, let's see how to add Azure App Configuration to a typical Spring Boot application:
 
