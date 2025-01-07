@@ -12,50 +12,13 @@ As applications age, the tools, technologies, and architectures they rely on can
 
 Inspired by the strangler fig tree that grows around and eventually replaces its host, this pattern involves creating a façade that intercepts requests to the backend legacy system. The façade routes these requests either to the legacy application or the new services. This approach enables existing features to be migrated gradually, while consumers continue using the same interface, unaware of the changes happening behind the scenes.
 
-**Key Benefits of the Strangler Pattern:**
-
-- **Minimized Risks:** Incremental changes reduce the likelihood of system-wide disruptions.
-- **No Downtime:** Updates occur without halting the system, ensuring continued availability.
-- **Parallel Operations:** Legacy and modern systems coexist during migration, providing flexibility for gradual transitions.
-- **Client Transparency:** Clients don't need to know where specific features are located, as the façade handles request routing.
-
 By gradually replacing the legacy system's features, the new system eventually encompasses all functionalities, allowing you to safely decommission the old system.
-
-**Issues and Considerations:**
-
-- **Shared Resources:** Ensure both new and legacy systems can access shared services and data stores during the transition.
-- **Façade Design:** Structure the façade to avoid becoming a single point of failure or a performance bottleneck.
-- **Future Migrations:** Design new applications and services so they can be easily intercepted and replaced in future migrations.
-- **Migration Pace:** Keep the façade updated with the migration progress to maintain seamless operation.
-
-**When to Use This Pattern:**
-
-- **Gradual Migration Needs:** When you need to migrate a backend application to a new architecture incrementally.
-- **Risk Mitigation:** When a complete system overhaul is too risky or impractical.
-
-**When This Pattern May Not Be Suitable:**
-
-- **Non-Interceptable Requests:** If requests to the backend system cannot be intercepted.
-- **Simpler Systems:** For smaller applications where a complete replacement is manageable and less complex.
-
-**Alignment with Azure Well-Architected Framework:**
-
-- **Reliability:** The incremental approach mitigates risks during transitions, enhancing system resilience.
-- **Cost Optimization:** Maximizes the use of existing investments while modernizing incrementally, allowing high-ROI replacements first.
-- **Operational Excellence:** Supports continuous improvement with small, manageable changes over time, reducing deployment risks.
 
 *Read Martin Fowler's original article on the Strangler Fig Application [here](https://martinfowler.com/bliki/StranglerFigApplication.html).*
 
 ## Implementing the Strangler Pattern with Modern Web App (MWA) Patterns
 
 Combining the Strangler Pattern with the **Modern Web App (MWA) Pattern** provides a robust foundation for creating cloud-native, scalable applications. The MWA pattern emphasizes resilience, security, and scalability, leveraging cloud services and best practices.
-
-**Core Tenets of the MWA Pattern:**
-
-- **Microservices:** Breaking monoliths into independently deployable components.
-- **Containerization:** Ensuring consistency across diverse environments using containers.
-- **Cloud-Native Services:** Leveraging platforms like **Azure Kubernetes Service (AKS)** and **Azure App Service**.
-- **Automated Pipelines:** Implementing Continuous Integration and Continuous Deployment (CI/CD) for rapid delivery.
 
 ### Example
 
@@ -93,7 +56,6 @@ public class CustomerRouterController {
 ```
 
 This example uses a centralized router to direct requests based on specific criteria, such as the format of the customer ID. It enables both legacy and modern systems to coexist during the transition period.
-
 
 ## Running the Spring Boot Sample
 
@@ -157,13 +119,9 @@ The Modern Web App pattern reference sample leverages [Azure App Configuration](
 
 ### Feature Flags and Azure App Configuration
 
-Feature Flipping enables dynamic activation and deactivation of features in Java applications. It allows developers to manage features without redeploying code, facilitating:
+Feature Flipping enables dynamic activation and deactivation of features in Java applications. It allows developers to manage features without redeploying code.
 
-- **Dynamic Feature Management:** Toggle features at runtime.
-- **A/B Testing:** Gradually roll out features to subsets of users.
-- **Monitoring and Auditing:** Track feature usage and performance.
-
-#### Example: Using Azure App Configuration in a Spring Boot Application
+#### Example using Azure App Configuration in a Spring Boot Application
 
 1. **Add the Dependency** to your `pom.xml`:
 
@@ -197,11 +155,9 @@ Feature Flipping enables dynamic activation and deactivation of features in Java
    }
    ```
 
-   With this example, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
+With this example, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
 
 ## Reference App Demo 
-
-### App Configuration
 
 After you deploy the official reference app (using `azd up`) the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
 
