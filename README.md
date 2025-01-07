@@ -153,7 +153,7 @@ Ensure you have the following tools installed:
 
 ## Reference Implementation: Modern Java Web App Patterns
 
-The Modern Web App pattern reference sample leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings and feature flags centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
+The Modern Web App pattern reference sample leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
 
 ### Feature Flags and Azure App Configuration
 
@@ -182,7 +182,7 @@ Feature Flipping enables dynamic activation and deactivation of features in Java
    spring.cloud.azure.appconfiguration.stores[0].connection-string=<your-connection-string>
    ```
 
-3. **Implement Feature Flags** in your code:
+3. **Example Feature Flag**
 
    ```java
    @RestController
@@ -197,7 +197,7 @@ Feature Flipping enables dynamic activation and deactivation of features in Java
    }
    ```
 
-   With this setup, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
+   With this example, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
 
 ## Reference App Demo 
 
