@@ -165,5 +165,6 @@ Modernizing Java applications using the Strangler Pattern and Modern Web App Pat
 
 ## Useful Links
 
-- [Martin Fowler's Strangler Fig Application](https://martinfowler.com/bliki/StranglerFigApplication.html)
-- [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/)
+1) Deploy the Reference App: Experience all MWA principles in action by deploying the full production-grade Java application to Azure. Visit the [MWA GitHub repository](https://github.com/Azure/modern-web-app-pattern-java) for more information.
+2) Explore In-Depth Documentation: Learn more about MWA through comprehensive [documentation](https://aka.ms/eap/mwa/java/doc) on Microsoft Learn.
+3) [Try Out MWA Patterns](https://aka.ms/eap/mwa/java/demo): Discover and experiment with the MWA patterns to modernize and scale your Java applications.
