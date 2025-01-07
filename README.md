@@ -167,7 +167,7 @@ After you deploy the reference app (using `azd up`), the application is automati
 
 ![edit-application-setting](./docs/edit-application-setting.png)
 
-You can test and configure the code-level design patterns introduced in this implementation: strangler fig, queue-based load leveling and competing consumers, and distributed tracing. 
+You can test and configure the code-level design patterns introduced in this implementation: strangler fig, queue-based load leveling, competing consumers, and distributed tracing.
 To try it out, follow the steps in the reference application's [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md).
 
 ## Conclusion
