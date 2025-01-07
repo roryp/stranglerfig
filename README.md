@@ -20,7 +20,7 @@ By gradually replacing the legacy system's features, the new system eventually e
 
 ### Example
 
-Next lets look at a typical use case where the Strangler Pattern can be applied to a Java application.
+Next lets look at a typical use case where the Strangler Pattern would make a good fit.
 Imagine you're migrating a `/customer` endpoint from a legacy system to a modernized architecture. You can deploy a router that directs requests to either the old or new implementation based on specific conditions.
 
 #### Java Code Example
