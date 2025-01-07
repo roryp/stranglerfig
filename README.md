@@ -123,6 +123,8 @@ Feature Flipping enables dynamic activation and deactivation of features in Java
 
 #### Example using Azure App Configuration in a Spring Boot Application
 
+To add feature flags to a Spring Boot application using Azure App Configuration, follow these steps:
+
 1. **Add the Dependency** to your `pom.xml`:
 
    ```xml
@@ -159,11 +161,14 @@ With this example, the `/feature` endpoint will only be active if the `BetaFeatu
 
 ## Reference App Demo 
 
-After you deploy the official reference app (using `azd up`) the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
+To see a practical example of the Strangler Pattern in action, we have build a reference application that demonstrates feature toggling and gradual migration of a legacy system to a modern architecture. The reference application is based on the Modern Web App Patterns repository, which provides a blueprint for building cloud-native Java applications.
+
+After you deploy the reference app (using `azd up`) the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
 
 ![edit-application-setting](./docs/edit-application-setting.png)
 
-To try out the new messaging functionality, follow the steps in the reference application's [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md).
+You can test and configure the code-level design patterns introduced in this implementation: strangler fig, queue-based load leveling and competing consumers, and distributed tracing. 
+To try it out, follow the steps in the reference application's [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md).
 
 ## Conclusion
 
