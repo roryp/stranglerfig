@@ -113,7 +113,7 @@ Ensure you have the following tools installed:
 
 Combining the Strangler Pattern with the **Modern Web App (MWA) Pattern** provides a robust foundation for creating cloud-native, scalable applications. The MWA pattern emphasizes resilience, security, and scalability, leveraging cloud services and best practices. The Modern Web App pattern leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
 
-Next, lets see how to add Azure App Configration and feature flags to a typical Spring Boot application,
+Next, let's see how to add Azure App Configuration and feature flags to a typical Spring Boot application,
 
 To typically follow these steps:
 
