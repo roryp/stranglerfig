@@ -1,5 +1,7 @@
 ![Strangler Fig](Picture1.png)
 
+Author’s Note: After announcing the Modern Web App Pattern in this blog (https://devblogs.microsoft.com/java/introducing-the-modern-web-app-mwa-pattern-for-java), we now focus on the Strangler Fig pattern, which incrementally modernizes a legacy Java application by “strangling” targeted areas and replacing them with new microservices or minimal web apps. We’ll explore an example showing how to integrate this approach and smoothly transition from a monolith to modern microservices.
+
 # Modern Web App Patterns: Strangler Fig
 
 ## Introduction
@@ -18,6 +20,7 @@ By gradually replacing the legacy system's features, the new system eventually e
 
 ### Example
 
+Next lets look at a typical use case where the Strangler Pattern can be applied to a Java application.
 Imagine you're migrating a `/customer` endpoint from a legacy system to a modernized architecture. You can deploy a router that directs requests to either the old or new implementation based on specific conditions.
 
 #### Java Code Example
