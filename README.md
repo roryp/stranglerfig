@@ -153,11 +153,11 @@ With this example, the `/feature` endpoint will only be active if the `BetaFeatu
 
 ## Call to action
 
-Next, we encourage you to explore our end-to-end reference example of the MWA with the Strangler Fig pattern.
+Next, explore our end-to-end (with great focus on Strangler Fig) MWA reference example.
 Steps:
 1) Clone the [MWA respository](https://github.com/azure/modern-web-app-pattern-java) 
 2) Deploy the App using `azd up`
-4) Follow these steps to simulate the pattern via the email legacy service -  [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md) to simulate and observe these design patterns: strangler fig, queue-based load leveling, competing consumers, and distributed tracing.
+4) Migrate away from a legacy email service - [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md) to simulate and observe these design patterns: strangler fig, queue-based load leveling, competing consumers, and distributed tracing.
 
 ## Conclusion
 
