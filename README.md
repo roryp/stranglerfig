@@ -53,9 +53,9 @@ public class CustomerRouterController {
 
 This example uses a centralized router to direct requests based on specific criteria, such as the format of the customer ID. It enables both legacy and modern systems to coexist during the transition period.
 
-## Running the Spring Boot Sample
+## Running the example
 
-Follow these steps to run the Spring Boot sample demonstrating the Strangler Pattern.
+Follow these steps to run the Spring Boot example demonstrating the Strangler Pattern.
 
 ### Prerequisites
 
@@ -109,13 +109,11 @@ Ensure you have the following tools installed:
 
      These requests are routed to the legacy customer service.
 
-## Modern Java Web App Patterns
+## Modern Java Web App (MWA) Patterns
 
-Combining the Strangler Pattern with the **Modern Web App (MWA) Pattern** provides a robust foundation for creating cloud-native, scalable applications. The MWA pattern emphasizes resilience, security, and scalability, leveraging cloud services and best practices. The Modern Web App pattern leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
+Now that we have introduced the Stranger Fig pattern, we can combine it with others for form the **Modern Web App (MWA) Pattern** . The MWA pattern emphasizes resilience, security, and scalability, leveraging cloud native services and best practices. To manage application settings centrally, the MWA leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to simulate the the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
 
-Next, let's see how to add Azure App Configuration and feature flags to a typical Spring Boot application,
-
-To typically follow these steps:
+Next, let's see how to add Azure App Configuration to a typical Spring Boot application:
 
 1. **Add the Dependency** to your `pom.xml`:
 
