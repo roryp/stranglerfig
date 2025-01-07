@@ -157,7 +157,7 @@ Next, explore our end-to-end (with great focus on Strangler Fig) MWA reference e
 Steps:
 1) Clone the [MWA respository](https://github.com/azure/modern-web-app-pattern-java) 
 2) Deploy the App using `azd up`
-3) Real-time migrate an Azure App using the Strangler Fig Pattern - [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md) with these design patterns: Strangler Fig pattern, Queue-Based Load Leveling pattern, Competing Consumers pattern, Health Endpoint Monitoring pattern, and Retry pattern.
+3) Real-time migrate an Azure App using the Strangler Fig Pattern - [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md)
 
 ![Architecture](./docs/architecture.png)
 
