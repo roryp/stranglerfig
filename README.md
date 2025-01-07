@@ -172,15 +172,9 @@ To try it out, follow the steps in the reference application's [demo.md](https:/
 
 ## Conclusion
 
-Modernizing Java applications using the Strangler Pattern and Modern Web App Pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability.
+Modernizing Java applications using the Strangler Pattern and Modern Web App Pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability. Start your modernization journey today by adopting these proven architectural patterns with the help of the [Modern Java Web App Patterns Repository](https://github.com/azure/modern-web-app-pattern-java)
 
 ## Useful Links
 
 - [Martin Fowler's Strangler Fig Application](https://martinfowler.com/bliki/StranglerFigApplication.html)
-- [Modern Java Web App Patterns Repository](https://github.com/azure/modern-web-app-pattern-java)
-- [JDK 17 Downloads](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
-- [Apache Maven Downloads](https://maven.apache.org/download.cgi)
-- [Visual Studio Code Downloads](https://code.visualstudio.com/Download)
-- [Java Extension Pack for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-- [FF4j Official Website](https://ff4j.org/)
 - [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/)
