@@ -113,17 +113,15 @@ Ensure you have the following tools installed:
 
      These requests are routed to the legacy customer service.
 
-## Reference Implementation: Modern Java Web App Patterns
+## Modern Java Web App Patterns
 
-The Modern Web App pattern reference sample leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
-
-### Feature Flags and Azure App Configuration
+Modern Web Apps leverage [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
 
 Feature Flipping enables dynamic activation and deactivation of features in Java applications. It allows developers to manage features without redeploying code.
 
-#### Example using Azure App Configuration in a Spring Boot Application
+### Example using Azure App Configuration in a Spring Boot Application
 
-To add feature flags to a Spring Boot application using Azure App Configuration, follow these steps:
+To add feature flags to a Spring Boot application using Azure App Configuration, you follow these steps:
 
 1. **Add the Dependency** to your `pom.xml`:
 
@@ -161,8 +159,7 @@ With this example, the `/feature` endpoint will only be active if the `BetaFeatu
 
 ## Reference App Demo 
 
-To see a practical example of the Strangler Pattern in action, we have built a reference application that demonstrates feature toggling and gradual migration of a legacy system to a modern architecture. The reference application is based on the Modern Web App Patterns repository, which provides a blueprint for building cloud-native Java applications.
-
+To see a practical example of the Strangler Pattern with feature flags, in action, we have built a reference application that demonstrates feature toggling and gradual migration of a legacy system to a modern architecture.
 After you deploy the reference app (using `azd up`), the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
 
 ![edit-application-setting](./docs/edit-application-setting.png)
