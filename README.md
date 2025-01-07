@@ -16,10 +16,6 @@ By gradually replacing the legacy system's features, the new system eventually e
 
 *Read Martin Fowler's original article on the Strangler Fig Application [here](https://martinfowler.com/bliki/StranglerFigApplication.html).*
 
-## Implementing the Strangler Pattern with Modern Web App (MWA) Patterns
-
-Combining the Strangler Pattern with the **Modern Web App (MWA) Pattern** provides a robust foundation for creating cloud-native, scalable applications. The MWA pattern emphasizes resilience, security, and scalability, leveraging cloud services and best practices.
-
 ### Example
 
 Imagine you're migrating a `/customer` endpoint from a legacy system to a modernized architecture. You can deploy a router that directs requests to either the old or new implementation based on specific conditions.
@@ -115,13 +111,11 @@ Ensure you have the following tools installed:
 
 ## Modern Java Web App Patterns
 
-Modern Web Apps leverage [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
+Combining the Strangler Pattern with the **Modern Web App (MWA) Pattern** provides a robust foundation for creating cloud-native, scalable applications. The MWA pattern emphasizes resilience, security, and scalability, leveraging cloud services and best practices. The Modern Web App pattern leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
 
-Feature Flipping enables dynamic activation and deactivation of features in Java applications. It allows developers to manage features without redeploying code.
+Next, lets see how to add Azure App Configration and feature flags to a typical Spring Boot application,
 
-### Example using Azure App Configuration in a Spring Boot Application
-
-To add feature flags to a Spring Boot application using Azure App Configuration, you follow these steps:
+To typically follow these steps:
 
 1. **Add the Dependency** to your `pom.xml`:
 
@@ -155,11 +149,9 @@ To add feature flags to a Spring Boot application using Azure App Configuration,
    }
    ```
 
-With this example, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration.
-
-## Reference App Demo 
-
+With this example, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration. 
 To see a practical example of the Strangler Pattern with feature flags, in action, we have built a reference application that demonstrates feature toggling and gradual migration of a legacy system to a modern architecture.
+
 After you deploy the reference app (using `azd up`), the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
 
 ![edit-application-setting](./docs/edit-application-setting.png)
