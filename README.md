@@ -149,13 +149,12 @@ Next, let's see how to add Azure App Configuration to a typical Spring Boot appl
 
 With this example, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration. 
 To see a practical example of the Strangler Pattern with feature flags, in action, we have built a reference application that demonstrates feature toggling and gradual migration of a legacy system to a modern architecture.
-
-After you deploy the reference app (using `azd up`), the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
+Clone the [Modern Web App respository](https://github.com/azure/modern-web-app-pattern-java) and follow the steps to deploy.
+After you deploy the reference app, the application is automatically set up to use Azure App Configuration.
 
 ![edit-application-setting](./docs/edit-application-setting.png)
 
-You can test and configure the code-level design patterns introduced in this implementation: strangler fig, queue-based load leveling, competing consumers, and distributed tracing.
-To try it out, follow the steps in the reference application's [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md).
+Now follow the steps in the reference application's [demo.md](https://github.com/Azure/modern-web-app-pattern-java/blob/main/demo.md) to simulate and observe these design patterns: strangler fig, queue-based load leveling, competing consumers, and distributed tracing.
 
 ## Conclusion
 
