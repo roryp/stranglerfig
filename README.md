@@ -161,9 +161,9 @@ With this example, the `/feature` endpoint will only be active if the `BetaFeatu
 
 ## Reference App Demo 
 
-To see a practical example of the Strangler Pattern in action, we have build a reference application that demonstrates feature toggling and gradual migration of a legacy system to a modern architecture. The reference application is based on the Modern Web App Patterns repository, which provides a blueprint for building cloud-native Java applications.
+To see a practical example of the Strangler Pattern in action, we have built a reference application that demonstrates feature toggling and gradual migration of a legacy system to a modern architecture. The reference application is based on the Modern Web App Patterns repository, which provides a blueprint for building cloud-native Java applications.
 
-After you deploy the reference app (using `azd up`) the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
+After you deploy the reference app (using `azd up`), the application is automatically set up to use the new email service. The default value for `CONTOSO_SUPPORT_GUIDE_REQUEST_SERVICE` is `queue` in the App Service, sending email requests to the Azure Service Bus. These requests are then handled by the `email-processor` container app. This setting is stored in Azure App Configuration.
 
 ![edit-application-setting](./docs/edit-application-setting.png)
 
