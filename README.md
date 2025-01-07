@@ -161,7 +161,7 @@ Steps:
 
 ## Conclusion
 
-Modernizing Java applications using the Strangler Pattern and MWA Pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability. Start your modernization journey today by adopting these proven architectural patterns with the help of the [Modern Java Web App Patterns Repository](https://github.com/azure/modern-web-app-pattern-java)
+Modernizing Java applications using the Strangler Fig pattern and the Modern Web App (MWA) pattern provides a strategic approach to incrementally evolve legacy systems. By leveraging these patterns, organizations can achieve scalability, maintainability, and performance while minimizing risks and ensuring continuous availability. Start your modernization journey today by adopting these proven architectural patterns with the help of the [Modern Java Web App Patterns Repository](https://github.com/azure/modern-web-app-pattern-java)
 
 ## Useful Links
 
