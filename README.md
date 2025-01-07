@@ -94,20 +94,6 @@ public class CustomerRouterController {
 
 This example uses a centralized router to direct requests based on specific criteria, such as the format of the customer ID. It enables both legacy and modern systems to coexist during the transition period.
 
-## Reference Implementation: Modern Java Web App Patterns
-
-The sample implementation in this repository mirrors the approach provided in the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository. Both implementations utilize the Strangler Pattern for incremental modernization.
-
-**Key Aspects of the Reference App Implementation:**
-
-- **Gradual Replacement:** Replacing parts of the legacy system incrementally with new functionality.
-- **Routing Logic:** Directing requests to the appropriate service (legacy or modern) based on specific criteria.
-- **Asynchronous Communication:** Using message queues for reliable, decoupled interactions between services.
-- **Containerization:** Deploying services consistently across environments using container apps.
-- **Comprehensive Documentation:** Providing step-by-step instructions for setting up, deploying, and managing the application transition.
-
-For detailed guidance, visit the [Modern Java Web App Patterns](https://github.com/azure/modern-web-app-pattern-java) repository.
-
 
 ## Running the Spring Boot Sample
 
@@ -165,6 +151,10 @@ Ensure you have the following tools installed:
 
      These requests are routed to the legacy customer service.
 
+## Reference Implementation: Modern Java Web App Patterns
+
+The Modern Web App pattern reference sample leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings and feature flags centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
+
 ### Feature Flags and Azure App Configuration
 
 Feature Flipping enables dynamic activation and deactivation of features in Java applications. It allows developers to manage features without redeploying code, facilitating:
@@ -172,15 +162,6 @@ Feature Flipping enables dynamic activation and deactivation of features in Java
 - **Dynamic Feature Management:** Toggle features at runtime.
 - **A/B Testing:** Gradually roll out features to subsets of users.
 - **Monitoring and Auditing:** Track feature usage and performance.
-
-The Modern Web App pattern reference sample leverages [Azure App Configuration](https://azure.microsoft.com/services/app-configuration/) to manage application settings and feature flags centrally. This service is particularly useful when implementing the Strangler Pattern, as it supports feature toggling and the gradual rollout of new features.
-
-**Benefits of Azure App Configuration:**
-
-- **Centralized Management:** Simplify configuration across multiple applications and environments.
-- **Real-Time Updates:** Modify settings and feature flags without application restarts.
-- **Feature Flags:** Control feature exposure to users, enabling staged rollouts.
-- **Seamless Integration:** Works well with Azure services and supports various programming languages.
 
 #### Example: Using Azure App Configuration in a Spring Boot Application
 
