@@ -55,10 +55,8 @@ public class CustomerRouterController {
 ```
 
 This example uses a centralized router to direct requests based on specific criteria, such as the format of the customer ID. It enables both legacy and modern systems to coexist during the transition period.
-
-## Running the example
-
 Follow these steps to run the Spring Boot example demonstrating the Strangler Fig pattern.
+
 ### Prerequisites
 
 Ensure you have the following tools installed:
@@ -151,9 +149,7 @@ Next, let's see how to add Azure App Configuration to a typical Spring Boot appl
 
 With this example, the `/feature` endpoint will only be active if the `BetaFeature` flag is enabled in Azure App Configuration. 
 
-## Call to action
-
-Next, explore our end-to-end (with great focus on Strangler Fig) MWA reference example.
+Next, explore our end-to-end (with great focus on Strangler Fig and Azure App Config) MWA reference example.
 Steps:
 1) Clone the [MWA respository](https://github.com/azure/modern-web-app-pattern-java) 
 2) Deploy the App using `azd up`
