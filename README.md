@@ -101,7 +101,7 @@ Ensure you have the following tools installed:
      curl http://localhost:8080/api/customer?id=MODERN_1
      ```
 
-     This request is routed to the modern customer service.
+     This request is routed to the modern customer service based on the customer ID prefix e.g "MODERN_".
 
    - **Legacy Customer IDs**
 
@@ -109,7 +109,7 @@ Ensure you have the following tools installed:
      curl http://localhost:8080/api/customer?id=LEGACY_1
      ```
 
-     These requests are routed to the legacy customer service.
+     These requests are routed to the legacy customer service based on the customer ID prefix e.g "LEGACY_".
 
 ## Modern Java Web App (MWA) Pattern
 
